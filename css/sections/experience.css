@@ -1,4 +1,3 @@
-/* --- GIỮ NGUYÊN HOÀN TOÀN KHUNG LAYOUT CHÍNH CỦA BẠN --- */
 .work__section {
   position: relative;
   overflow: hidden;
@@ -68,7 +67,6 @@
   font-size: 2.5rem;
 }
 
-/* --- ĐÂY LÀ ĐOẠN FIX SỬA LỖI CO CỤM THEO ẢNH BẠN GỬI --- */
 .content-box {
   position: relative;
   background: transparent;
@@ -77,10 +75,12 @@
   margin: 0; /* XÓA BỎ margin: 0 2rem cũ - nguyên nhân bóp nghẹt card */
   width: 100%; /* ÉP BUỘC CARD BUNG RỘNG HẾT DIỆN TÍCH CỦA CỘT */
   height: 180px; /* Chiều cao cố định chuẩn để lật mượt */
+  content-visibility: auto;
+  contain-intrinsic-size: 180px;
   perspective: 2500px;
   cursor: pointer;
   box-sizing: border-box;
-  contain: layout paint;
+  contain: layout style;
   will-change: transform;
   transition: transform 0.3s ease;
 }
@@ -153,7 +153,7 @@
   border-radius: 1rem;
   border: 3px solid rgb(110, 110, 110);
   background-color: var(--p-20);
-  backdrop-filter: blur(15px);
+  backdrop-filter: blur(8px);
 }
 
 /* MẶT SAU: Chia ngang tỉ lệ chuẩn */
@@ -198,11 +198,11 @@
   display: flex;
   flex-direction: column;
   gap: 0.3rem; /* Khoảng cách vừa vặn, ko bị sát sít */
-  overflow-y: scroll;
+  overflow-y: auto;
   box-sizing: border-box;
 }
 
-/* Thanh cuộn taskbar chìm siêu mỏng tinh tế */
+/* Thanh cuộn taskbar chìm */
 .card-back-right::-webkit-scrollbar {
   width: 4px;
 }
@@ -215,7 +215,6 @@
   border-radius: 99px;
 }
 
-/* KHÔI PHỤC NGUYÊN VẸN TOÀN BỘ GIÁ TRỊ VÀ GRADIENT MÀU CHỮ CỦA BẠN */
 .date {
   display: flex;
   align-items: center;
@@ -239,7 +238,6 @@
   white-space: nowrap; /* Không cho tên tiêu đề bị xuống dòng vô lý */
 }
 
-/* H3 mặt sau theo tông xanh dương giống ảnh mẫu */
 .card-back-right h3 {
   font-size: 1.25rem;
   font-weight: 700;
@@ -300,7 +298,7 @@
 
   transition:
     background-color 0.3s ease,
-    transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .rotation-icon i {
@@ -327,19 +325,15 @@
   white-space: nowrap;
 }
 
-/* HIỆU ỨNG VIỀN HOVER GRADIENT GỐC CỦA BẠN */
 .content-box:hover .card-front,
 .content-box:hover .card-back {
-  border-color: transparent;
-  background:
-    linear-gradient(var(--p-20), var(--p-20)) padding-box,
-    var(--gradient-primary) border-box;
-  border: 3px solid transparent;
-  box-shadow: 0 12px 30px rgba(60, 90, 220, 0.12);
+  border-color: #2563eb; 
+  box-shadow: 0 12px 24px rgba(37, 99, 235, 0.15);
 }
 
 .content-box:hover {
   transform: translateY(-4px);
+  will-change: transform;
 }
 
 .timeline-box {
