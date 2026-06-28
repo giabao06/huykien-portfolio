@@ -120,3 +120,8 @@ section {
     border-radius: 16px;
     padding: 48px 32px;
 }
+
+
+.break{
+    word-break: break-all;
+}
