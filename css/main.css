@@ -79,6 +79,9 @@ a {
 section {
   margin-top: 120px;
   margin-bottom: 120px;
+  animation: fadeInScale linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 32%;
 }
 
 .container {

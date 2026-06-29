@@ -107,6 +107,11 @@
     }
   }
 
+  /** PROJECTS **/
+  .projects__section {
+    padding-top: 10rem;
+  }
+
   /** CONTACT **/
   .contact-content {
     flex-direction: column;
